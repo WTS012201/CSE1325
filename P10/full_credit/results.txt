@@ -1,0 +1,98 @@
+====================
+HOMEWORK P10 RESULTS
+====================
+
+Spring 2021
+
+
+FULL CREDIT
+===========
+
+QUESTION 1: Which puzzles did you use to achieve around a 30 second runtime: I used puzzles 10-69 
+
+QUESTION 2: Provide the output of ``timeit`` (or ``time ./wssolver 1 puzzles/puzzle*.txt`` for runs with 1 through 16 threads below. You can run all of these with a single bash command if you like: ``for i in {1..16} ; do time ./wssolver $i puzzles/puzzles*.txt ; done``
+
+Example Timing:
+
+ricegf@antares:~/dev/202101/P10/baseline$ ./timeit
+
+real  0m15.435s
+user  0m15.395s
+sys   0m0.028s
+
+YOUR Timing:
+
+time ./wssolver puzzles/puzzle1?.txt puzzles/puzzle2?.txt puzzles/puzzle3?.txt puzzles/puzzle4?.txt puzzles/puzzle5?.txt puzzles/puzzle6?.txt > output.txt
+
+Using 1 thread: 
+real    0m28.261s
+user    0m28.118s
+sys     0m0.084s
+
+Using 2 threads: 
+
+real    0m18.254s
+user    0m28.517s
+sys     0m0.880s
+
+Using 4 threads: 
+
+real    0m16.045s
+user    0m28.673s
+sys     0m0.726s
+
+Using 8 threads:
+
+real    0m15.818s
+user    0m28.254s
+sys     0m0.716s
+
+Using 16 threads:
+
+real    0m14.568s
+user    0m28.346s
+sys     0m0.168s
+
+QUESTION 3: Does adding more threads continue to speed up the program? Do more threads ever slow down the program slightly?  Why or why not?
+
+It continues to speed up the program, but the increase in speed becomes smaller. There appears to be a certain point where too many threads
+can slow down the program slightly. This is probably due to how the program handles the puzzles in subsets for each thread.
+
+
+QUESTION 4: Does adding more threads increase the "system load", or is it constant regardless of the number of threads?  Why?
+
+Adding more threads appears to increase the "system load" because the cpu is having to manage more threads at once, increasing the
+"system load" percentage.
+
+
+
+BONUS
+=====
+
+QUESTION 5: Provide the output of ``timeit`` (or ``time ./wssolver 1 puzzles/puzzle*.txt``) for runs with (at least) 1, 2, and 4 threads below. 
+
+
+YOUR Timing:
+
+
+
+
+QUESTION 6: Does the thread pool approach you used in the Bonus section run substantially faster than the hard allocations use in the Full Credit section?
+
+
+
+
+EXTREME BONUS
+=============
+
+QUESTION 7: BRIEFLY summarize your strategies for optimizing the solution of word search puzzles.
+
+
+
+
+
+
+QUESTION 8: In the performance competition, how would you like to be identified to the class? (Your real name is fine, or any professional alias is acceptable.)
+
+
+
